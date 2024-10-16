@@ -1,0 +1,725 @@
+/* General resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and borders in the element's total width and height */
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    background-color: #ffffff;
+}
+
+/* Navigation styles */
+.b {
+    margin-top: 20px;
+}
+
+/* Styling for the main heading "Amaha" */
+.heading {
+    font-size: 90px;
+    font-weight: bold;
+    color: rgba(231, 105, 67, 1);
+    text-align: center;
+    font-family: "Baloo Da 2", sans-serif;
+    margin: 0; /* Reset margin for heading */
+    text-transform: lowercase;
+    line-height: 0.7;
+}
+
+/* Styling for the text below the heading */
+nav p {
+    margin: 0;
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(73, 73, 73);
+    line-height: 1.2;
+}
+
+/* Styling for the Olympics design section */
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 105vh; /* Height of the entire container */
+    margin-top: 20px; /* Space between navigation and content */
+    background-color: #fce6e6;
+}
+
+/* Olympic rings in the background */
+.olympic-rings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/5/5c/Olympic_rings_without_rims.svg') no-repeat center;
+    background-size: 80%;
+    z-index: 1;
+    opacity: 0.5; /* Slight opacity to give prominence to other elements */
+}
+
+/* Oval background for the Olympics design */
+.oval-background {
+    position: relative;
+    width: 100%; /* Make oval background responsive */
+    max-width: 1500px; /* Limit max width */
+    height: 630px; /* Height of the oval */
+    background-color: #ff733cb6;
+    border-radius: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Text inside the oval background */
+.text-on-oval {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 55px;
+    font-weight: 500; /* Medium weight */
+    text-align: center;
+    z-index: 3;
+    max-width: 80%; /* Control the text width to force it onto multiple lines */
+    line-height: 1.2; /* Adjust the line height to ensure spacing between lines */
+}
+
+/* Athlete images styling */
+.athletes {
+    display: flex;
+    justify-content: space-between; /* Space evenly */
+    position: absolute;
+    bottom: -20px; /* Adjust position to overlap with the oval */
+    width: 100%; /* Use full width of the athletes' container */
+    z-index: 4;
+}
+
+.athletes img {
+    width: 25%; /* Adjust width to allow for overlapping and maintain proportions */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the full image is displayed */
+}
+
+.athletes img:nth-child(2) {
+    transform: translate(-120px, 90px); /* Move the second athlete image left and down */
+}
+
+.athletes img:nth-child(3) {
+    transform: translate(50px, 180px); /* Move the third athlete image down */
+}
+.frame {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background-color: #fff6f6;
+    overflow: hidden;
+  }
+  
+  .frame .overlap-group {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    left: -29px;
+  }
+  
+  .frame .ellipse {
+    position: absolute;
+    width: 538px;
+    height: 196px;
+    text-align: center;
+    margin-left: 30%;
+    top: 40px;
+    left: 0;
+    background-color: #e76943;
+    border-radius: 269px/98px;
+  }
+  
+  .frame .image {
+    position: absolute;
+    width: 100%;
+    height: 320px;
+    top: 0;
+    
+    mix-blend-mode: multiply; 
+    object-fit: contain;
+  }
+  
+  .frame .img {
+    position: absolute;
+    width: 212px;
+    height: 320px;
+    top: 0;
+    margin-left: 30%;
+    object-fit: cover;
+  }
+  
+  .frame .image-2 {
+    position: absolute;
+    width: 169px;
+    margin-left: 30%;
+    height: 247px;
+    top: 73px;
+    left: 99px;
+  }
+  
+  .frame .image-3 {
+    position: absolute;
+    width: 160px;
+    height: 317px;
+    top: 3px;
+    left: 349px;
+    margin-left: 40%;
+    object-fit: cover;
+  }
+  
+  .frame .text-wrapper {
+    position: absolute;
+    width: 190px;
+    top: 59px;
+    left: 174px;
+    font-family: "DM Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    margin-left: 30%;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+  
+  .frame .image-4 {
+    position: absolute;
+    width: 197px;
+    margin-left: 35%;
+    height: 182px;
+    top: 138px;
+    left: 224px;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 768px) {
+    .frame .ellipse {
+        height: 120px; /* Further adjust height for smaller screens */
+    }
+
+    .frame .img,
+    .frame .image-2,
+    .frame .image-3,
+    .frame .image-4 {
+        width: 60%; /* Make all images smaller */
+        margin-left: 20%; /* Center align images */
+        height: auto; /* Allow height to adjust based on aspect ratio */
+    }
+
+    .frame .text-wrapper {
+        top: 80px; /* Adjust top position for smaller screens */
+        font-size: 18px; /* Slightly reduce font size */
+    }
+}
+.untitled-page__footerSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(243, 243, 243);
+    overflow: hidden;
+  }
+  
+  .untitled-page__socialMediaContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 53px 5.9% 50px auto;
+    width: 338px;
+    max-width: 85%;
+  }
+  
+  @media (max-width: 383px) {
+    .untitled-page__socialMediaContainer {
+      margin: 50px 5.9% 50px auto;
+    }
+  }
+  
+  .untitled-page__socialIconsRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 5px;
+  }
+  
+  @media (max-width: 383px) {
+    .untitled-page__socialIconsRow {
+      column-gap: 8px;
+    }
+  }
+  
+  .untitled-page__facebookIcon,
+  .untitled-page__twitterIcon,
+  .untitled-page__instagramIcon,
+  .untitled-page__linkedinIcon {
+    object-fit: cover;
+  }
+  
+  
+  .untitled-page__additionalLinksColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 13px 0;
+    margin: 26px auto 0;
+    width: 181px;
+    max-width: 85%;
+  }
+  
+  .untitled-page__appStoreIcon {
+    z-index: 1;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .untitled-page__playStoreIcon {
+    margin: 0 1px 0 0;
+    width: 99.45%;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+  
+  .untitled-page__legalLinksColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+    margin: 23px 0 0 18.05%;
+    width: 163px;
+    max-width: 85%;
+  }
+  
+  @media (max-width: 383px) {
+    .untitled-page__legalLinksColumn {
+      margin: 23px auto 0;
+    }
+  }
+  
+  .untitled-page__webVersionLink,
+  .untitled-page__unsubscribeLink {
+    font: 500 20px/1.25 Quicksand, Helvetica, Arial, serif;
+    color: rgb(76, 76, 76);
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 991px) {
+    .untitled-page__webVersionLink,
+    .untitled-page__unsubscribeLink {
+      align-items: flex-start;
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 479px) {
+    .untitled-page__webVersionLink,
+    .untitled-page__unsubscribeLink {
+      font-size: 16px;
+    }
+  }
+  
+  .untitled-page__companyLogo {
+    position: absolute;
+    inset: 61px 1062px 222px 57px;
+    width: 321px;
+    height: 82px;
+  }
+  
+  .untitled-page__contactInfoContainer {
+    position: absolute;
+    inset: 179px 747px 106px 57px;
+    display: flex;
+    flex-direction: column;
+    width: 636px;
+  }
+  
+  .untitled-page__phoneNumber,
+  .untitled-page__emailAddress,
+  .untitled-page__companyAddress {
+    z-index: 1;
+    font: 500 20px/1.25 Quicksand, Helvetica, Arial, serif;
+    color: rgb(76, 76, 76);
+  }
+  
+  @media (max-width: 991px) {
+    .untitled-page__phoneNumber,
+    .untitled-page__emailAddress,
+    .untitled-page__companyAddress {
+      align-items: flex-start;
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 479px) {
+    .untitled-page__phoneNumber,
+    .untitled-page__emailAddress,
+    .untitled-page__companyAddress {
+      font-size: 16px;
+    }
+  }
+  /* Mobile Styles */
+@media (max-width: 768px) {
+    .untitled-page__footerSection {
+      flex-direction: column; /* Ensure vertical stacking */
+      padding: 20px; /* Add padding for better spacing */
+      position: relative; /* Ensure context for absolute children */
+    }
+  
+    .untitled-page__companyLogo {
+      width: 100%; /* Make logo responsive */
+      height: auto; /* Maintain aspect ratio */
+      position: relative; /* Adjust positioning */
+      margin: 20px auto; /* Center align */
+      z-index: 1; /* Ensure it's above other content */
+    }
+  
+    .untitled-page__contactInfoContainer {
+      width: 90%; /* Adjust width for mobile */
+      margin: 10px auto; /* Center align */
+      position: relative; /* Allow stacking below logo */
+      z-index: 1; /* Keep it above the footer background */
+    }
+  
+    .untitled-page__phoneNumber,
+    .untitled-page__emailAddress,
+    .untitled-page__companyAddress {
+      font-size: 16px; /* Adjust font size for mobile */
+      text-align: center; /* Center align text */
+      margin-top: 10px; /* Add spacing above each item */
+    }
+  
+    .untitled-page__socialMediaContainer {
+      margin: 20px auto; /* Center align */
+      width: 100%; /* Full width */
+    }
+  
+    .untitled-page__socialIconsRow {
+      justify-content: center; /* Center align icons */
+      gap: 10px; /* Increase gap between icons */
+    }
+  
+    .untitled-page__additionalLinksColumn,
+    .untitled-page__legalLinksColumn {
+      width: 90%; /* Adjust to fit mobile screen */
+      margin: 20px auto; /* Center align */
+    }
+  
+    .untitled-page__webVersionLink,
+    .untitled-page__unsubscribeLink {
+      font-size: 16px; /* Adjust font size for mobile */
+      text-align: center; /* Center align text */
+    }
+  }
+  
+
+/* Center text styles */
+.centertext {
+    color: rgb(73, 73, 73);
+    margin-top: 40px;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: light;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.colored {
+    color: rgba(231, 105, 67, 1);
+    font-weight: bolder;
+    font-size: 40px;
+}
+.headingfooter {
+    font-size: 90px;
+    font-weight: bold;
+    color: rgba(231, 105, 67, 1);
+    font-family: "Baloo Da 2", sans-serif;
+    margin: 0; /* Reset margin for heading */
+    text-transform: lowercase;
+    line-height: 0.7;
+}
+
+/* Styling for the text below the heading */
+untitled-page__companyLogo p {
+    margin: 0;
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(73, 73, 73);
+    line-height: 1.2;
+}
+/* Card for Image and Text - Pressure to Perform section */
+.pressure-to-perform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
+    width: 100%;
+    background-color: #ffffff; /* Shared background for image and text */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Shadow for card-like appearance */
+    border-radius: 20px;
+    padding: 30px;
+    overflow: hidden;
+    gap: 05px; /* Space between image and text */
+}
+
+.pressure-image {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pressure-image img {
+    height: 220px; /* Adjust the height of the image */
+    width: 80px; /* Adjust the width of the image */
+    border-radius: 200px; /* Capsule shape */
+    object-fit: cover;
+    aspect-ratio: 0.9; /* Ensure vertical image */
+}
+
+.text-content {
+    flex: 1;
+    max-width: 50%; /* Adjust text width for layout */
+    margin-right: 20%;
+}
+
+.pressure-title {
+    font-size: 24px; /* Title size */
+    color: #FF6347; /* Tomato color */
+    margin-bottom: 10px;
+}
+
+.pressure-description {
+    font-size: 14px; /* Small text size */
+    color: #555;
+    line-height: 1.6;
+}
+/* Styling for the frame */
+.frames {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+}
+
+/* Container for each quote and image */
+.quote-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+/* Quote box styling */
+.quote-box {
+    flex: 1;
+    text-align: right;
+    color: #4C4C4C;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    margin-right: 20px;
+    max-width: 65%; /* Limit width to create 2-3 line breaks */
+}
+
+/* Quote text and author */
+.quote-box .quote {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+.quote-box .author {
+    font-weight: 400;
+}
+
+/* Circle image styling */
+.circle-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+.circle-border {
+    width: 130px;
+    height: 130px;
+    border-radius: 9999px;
+    position: absolute;
+    border: 5px solid;
+    z-index: -1;
+  }
+
+/* Add a background ring */
+.circle-img::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    z-index: -1;
+}
+/* Smaller and sharper mountain range zigzag divider */
+.mountain-divider {
+    width: 20%;
+    height: 15px; /* Height to accommodate the waves */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M 0 5 Q 2.5 0 5 5 Q 7.5 10 10 5 Q 12.5 0 15 5 Q 17.5 10 20 5 Q 22.5 0 25 5 Q 27.5 10 30 5 Q 32.5 0 35 5 Q 37.5 10 40 5 Q 42.5 0 45 5 Q 47.5 10 50 5 Q 52.5 0 55 5 Q 57.5 10 60 5 Q 62.5 0 65 5 Q 67.5 10 70 5 Q 72.5 0 75 5 Q 77.5 10 80 5 Q 82.5 0 85 5 Q 87.5 10 90 5 Q 92.5 0 95 5 Q 97.5 10 100 5" fill="none" stroke="%234C4C4C" stroke-width="1" /></svg>');
+    background-repeat: repeat-x; /* Repeat the wave pattern horizontally */
+    margin: 20px auto; /* Center the divider with some margin */
+    position: relative;
+}
+
+/* Image inside the circle */
+.circle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Zig-zag divider */
+.zigzag-divider {
+    width: 80px; /* Small width */
+    height: 10px;
+    background: repeating-linear-gradient(
+        135deg,
+        #4C4C4C,
+        #4C4C4C 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    margin: 0 auto 20px;
+    transform: rotate(180deg); /* Flip the zigzag */
+}
+
+/* Additional responsive styles */
+@media (max-width: 768px) {
+    .Frame48095812 {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        align-items: center; /* Center items */
+    }
+
+    .PositivePsych {
+        margin-bottom: 20px; /* Space below the image */
+    }
+
+    .ThePressureToPerform {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    .ThePressureToPerformDescription {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+
+    .card {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        text-align: center;
+    }
+
+    .pressure-image img {
+        height: 150px; /* Adjust image size for smaller screens */
+    }
+
+    .text-content {
+        max-width: 100%; /* Full width for text on smaller screens */
+        margin-top: 20px;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 45px; /* Reduce heading size for smaller screens */
+    }
+
+    nav p {
+        font-size: 16px; /* Adjust font size for navigation text */
+    }
+
+    .container {
+        width: 100%;
+        height: 80vh; /* Adjust height for mobile */
+        padding: 20px; /* Add some padding for better spacing */
+    }
+
+    .oval-background {
+        width: 100%; /* Make oval background responsive */
+        height: auto; /* Allow height to adjust */
+        max-height: 300px; /* Limit height for smaller screens */
+        margin: 0 auto; /* Center the oval */
+    }
+
+    .text-on-oval {
+        font-size: 30px; /* Reduce font size for text inside the oval */
+    }
+
+    .athletes {
+        display: inline-block; /* Allow images to wrap onto the next line */
+        position: relative; /* Change from absolute to relative for better flow */
+        bottom: 0; /* Reset bottom positioning */
+    }
+
+    .athletes img {
+        width: 40%; /* Set image width to 40% to allow two images per row */
+        margin: 5px; /* Add spacing between images */
+    }
+
+    .athletes img:nth-child(2),
+    .athletes img:nth-child(3) {
+        transform: none; /* Reset transformation on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 35px; /* Further reduce heading size */
+    }
+
+    nav p {
+        font-size: 14px; /* Smaller font size for navigation text */
+    }
+
+    .container {
+        width: 100%;
+        height: 60vh; /* Further adjust height for very small screens */
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    .oval-background {
+        width: 100%;
+        height: 70%; /* Match the height of the container */
+    }
+
+    .text-on-oval {
+        font-size: 24px; /* Further reduce font size for text in oval */
+    }
+
+    .athletes img {
+        width: 45%; /* Make athlete images larger for very small screens */
+        margin: 5px 0; /* Add vertical margin for spacing */
+    }
+}
